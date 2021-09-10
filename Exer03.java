@@ -1,5 +1,5 @@
 
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 
 class Main {
@@ -23,7 +23,19 @@ class Main {
             System.out.print(vetor[i] + ", ");
         }
         
-        Arrays.sort(vetor);
+        //Arrays.sort(vetor);
+
+        int aux;
+
+        for (int i = 0; i < vetor.length; i++) {
+            for (int j = 0; j < (vetor.length-1); j++) {
+                if (vetor[j]>vetor[j+1]) {
+                    aux = vetor[j];
+                    vetor[j] = vetor[j+1];
+                    vetor[j+1] = aux;
+                }
+            }
+        }
         
         System.out.print("\n\nNumeros em ordem crescente: ");
         for (int i = 0; i <vetor.length; i++) {
